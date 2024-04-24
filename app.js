@@ -1,5 +1,12 @@
-var QRCode = require('qrcode')
+const QRCode = require('qrcode');
 
-QRCode.toString('www.google.com', {type: 'terminal'}, (err,url) => {
-    console.log(url)
+let website = 'www.google.com'
+
+QRCode.toString(website, {type:'terminal'}, (err,url) => {
+    if(err){
+        console.error(err)
+    }
+    else{
+        console.log(url)
+    }
 })
